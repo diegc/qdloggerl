@@ -5,7 +5,7 @@ Quick and dirty logger for erlang
 
 ### What is qdloggerl? ###
 *qdloggerl* is a logging library for **Erlang**. It is intended as a simple and lightweight way of logging events, contained within a single header file, and designed to change the log level only at **compile time**.
-However, don't look at it as a ultra-optimized logger or the fastest in the market, since it was not its original purpose.
+However, don't look at it as an ultra-optimized logger or the fastest in the market, since it was not its original purpose.
 If you can improve its performance, feel free to send a pull request, fork it or modify it for your own purposes. Any suggestion about the format will also be welcome.
 
 ### Usage ###
@@ -23,6 +23,7 @@ Line 31: `?LOG_D("TEST", "Just assigned {\"%s\", %w} to {A, B}.~nThis is a new l
 If log level is set to _DEBUG_ (since it is the lowest level, if log level is set to a higher one, it won't write anything to _sdtout_), the output you will get is:  
 `[D][2012/07/26-23:04:47][foo:bar:31] TEST :: Just assigned {"Hello world", 42} to {A, B}.`  
 `[D][2012/07/26-23:04:47][foo:bar:31] TEST :: This is a new line.`  
+As you can see, it places the type (_D_ for _debug_), the time, the module, function and line where it was called, and also the tag, prepended to each line of the message string (to be identation-consistent). Auto-line breaking for long lines is not yet implemented.
 
 ###### More macros ######
 The other `LOG` macros work the same way. The two-argument macro just prints the contents of Msg, in fact, calling the three-argument macro is just syntactic sugar for the two-argument one with `Tag` as first argument and `io_lib:format(Format, Data)` as second.
