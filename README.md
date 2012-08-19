@@ -38,7 +38,7 @@ To use qdlogger you just have to put the header file `qdloggerl.hrl` into your s
 `-define(LOG_LEVEL_INFO, 3).     %% I: Errors, warnings, information.`  
 `-define(LOG_LEVEL_WARN, 2).     %% W: Errors and warnings are printed.`  
 `-define(LOG_LEVEL_ERROR, 1).    %% E: Only errors are printed.`  
-`-define(LOG_LEVEL_FATAL, 0).    %% F: Only fatal error are printed.`  
+`-define(LOG_LEVEL_FATAL, 0).    %% F: Only fatal errors are printed.`  
 
 To configure how much information is printed, you can either modify the `LOG_LEVEL` constant definition in the header, or pass the compiler the desired level (`erlc <yourfile> -DLOG_LEVEL=2` will set the logger level to _WARN_). If you don't modify the header neither tell the compiler which level you want, it defaults to 3, that is, _INFO_ level.
 
