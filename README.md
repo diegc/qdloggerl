@@ -14,7 +14,7 @@ qdlogger provides ten main macros, two for each log type: `LOG_<type>(Tag, Msg)`
 `LOG_I`: info  
 `LOG_W`: warning  
 `LOG_E`: error  
-`LOG_F`: fatal erro
+`LOG_F`: fatal error
 
 ###### Example of use ######
 Let's see an example. Imagine you have the following two lines of code inside a function called `bar`, contained in a module called `foo` (file `foo.erl`).  
